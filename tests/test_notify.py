@@ -16,4 +16,3 @@ def test_send(mock_post) -> None:
         headers={'Authorization': f'Bearer ' + test_token},
         data={'message': test_message}
     )
-

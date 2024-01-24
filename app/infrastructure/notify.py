@@ -15,6 +15,7 @@ class Notify:
     
     def send_message(self, message: IMessage) -> None:
         headers = {'Authorization': f'Bearer {self._line_notify_token}'}
-        data = message.to_message_dict()
+        data = message.to_dict()
         requests.post(self._line_notify_api, headers = headers, data = data)
+
 

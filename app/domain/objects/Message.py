@@ -21,5 +21,6 @@ class Message(IMessage):
         return self._message_text == obj._message_text
     
     
-    def to_message_dict(self) -> Dict[str, str]:
+    def to_dict(self) -> Dict[str, str]:
         return {'message': self._message_text}
+
