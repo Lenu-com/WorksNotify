@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
-from typing import Dict
 
-class IMessage(ABC):
+
+class IHttpClient(ABC):
     @abstractmethod
-    def to_request(self) -> Dict[str, str]:
+    def post(self, url, headers, data):
         raise NotImplementedError()
