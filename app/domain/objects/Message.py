@@ -1,26 +1,25 @@
-from typing import Dict
-from app.domain.objects.interfaces.i_message import IMessage
-
-
-class Message(IMessage):
+class Message:
     def __init__(self, message_text: str) -> None:
         if message_text is None:
             raise Exception('message_text is None.')
         if len(message_text) < 1:
             raise Exception('message_text is empty.')
-        self._message_text = message_text
+        self._text = message_text
         
     
     def __hash__(self) -> int:
-        return hash(self._message_text)
+        return hash(self._text)
     
     
     def __eq__(self, obj: object) -> bool:
         if not isinstance(obj, Message):
             return False
-        return self._message_text == obj._message_text
+        return self._text == obj._text
     
     
-    def to_request(self) -> Dict[str, str]:
-        return {'message': self._message_text}
+    @property
+    def text(self) -> str:
+        return self._text
+
+
 
