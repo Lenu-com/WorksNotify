@@ -1,4 +1,3 @@
-import os
 from typing import Final
 from app.infrastructure.interfaces.i_http_client import IHttpClient
 from app.domain.services.interfaces.i_message_service import IMessageService
